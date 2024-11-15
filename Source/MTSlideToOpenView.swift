@@ -13,8 +13,7 @@ import UIKit
 }
 
 @objcMembers public class MTSlideToOpenView: UIView {
-    public static var isOnRightToLeftLanguage = false
-    // MARK: All Views
+        // MARK: All Views
     public let textLabel: UILabel = {
         let label = UILabel.init()
         return label
@@ -25,7 +24,7 @@ import UIKit
     }()
     public let thumnailImageView: UIImageView = {
         let view = MTRoundImageView()
-        view.isUserInteractionEnabled = true        
+        view.isUserInteractionEnabled = true
         view.contentMode = .center
         return view
     }()
@@ -136,15 +135,17 @@ import UIKit
     }
     private var isFinished: Bool = false
     
-    override public init(frame: CGRect) {
+    private var isOnRightToLeft = false
+    public init(frame: CGRect, isOnRightToLeftLanguage: Bool = false) {
         super.init(frame: frame)
+        self.isOnRightToLeft = isOnRightToLeftLanguage
         setupView()
     }
     private var panGestureRecognizer: UIPanGestureRecognizer!
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        setupView()        
+        setupView()
     }
     
     private func setupView() {
@@ -304,7 +305,7 @@ import UIKit
     // MARK: Helpers
     
     func isOnRightToLeftLanguage() -> Bool {
-        return Self.isOnRightToLeftLanguage
+        return isOnRightToLeft
     }
 }
 
