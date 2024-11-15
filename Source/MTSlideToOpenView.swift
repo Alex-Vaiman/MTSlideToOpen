@@ -13,6 +13,7 @@ import UIKit
 }
 
 @objcMembers public class MTSlideToOpenView: UIView {
+    public static isOnRightToLeftLanguage = false
     // MARK: All Views
     public let textLabel: UILabel = {
         let label = UILabel.init()
@@ -303,7 +304,7 @@ import UIKit
     // MARK: Helpers
     
     func isOnRightToLeftLanguage() -> Bool {
-        return UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft
+        return self.isOnRightToLeftLanguage
     }
 }
 
