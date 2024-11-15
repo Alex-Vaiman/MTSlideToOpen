@@ -13,7 +13,7 @@ import UIKit
 }
 
 @objcMembers public class MTSlideToOpenView: UIView {
-    public static isOnRightToLeftLanguage = false
+    public static var isOnRightToLeftLanguage = false
     // MARK: All Views
     public let textLabel: UILabel = {
         let label = UILabel.init()
