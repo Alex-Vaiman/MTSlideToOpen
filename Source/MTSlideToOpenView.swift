@@ -304,7 +304,7 @@ import UIKit
     // MARK: Helpers
     
     func isOnRightToLeftLanguage() -> Bool {
-        return self.isOnRightToLeftLanguage
+        return Self.isOnRightToLeftLanguage
     }
 }
 
